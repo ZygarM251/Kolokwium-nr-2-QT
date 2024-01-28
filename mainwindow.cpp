@@ -52,18 +52,16 @@ void MainWindow::srednia()
     }
 
     ui->textSrednie->clear();
-
+    int rozmiarListy = listaStudentow.size();
     double sumaOcenInformatyka = 0.0;
     double sumaOcenMatematyka = 0.0;
     double sredniaInformatyka = 0.0;
     double sredniaMatematyka = 0.0;
 
-    for (int i = 0; i < listaStudentow.size(); i++)
+    for (int nrUcznia = 0; nrUcznia < rozmiarListy; ++nrUcznia)
     {
-        const Studenci &stud = listaStudentow.at(i);
-
-        sumaOcenInformatyka += stud.getInformatyka();
-        sumaOcenMatematyka += stud.getMatematyka();
+        sumaOcenInformatyka += listaStudentow[nrUcznia].getInformatyka();
+        sumaOcenMatematyka += listaStudentow[nrUcznia].getMatematyka();
     }
 
     // Poprawione obliczenia średnich
@@ -74,7 +72,7 @@ void MainWindow::srednia()
     }
 
     ui->textSrednie->append(QString("<b>Średnia ocen z Informatyki wynosi:</b> %1").arg(sredniaInformatyka));
-        ui->textSrednie->append(QString("<b>Średnia ocen z Matematyki wynosi:</b> %1").arg(sredniaMatematyka));
+     ui->textSrednie->append(QString("<b>Średnia ocen z Matematyki wynosi:</b> %1").arg(sredniaMatematyka));
 }
 
 void MainWindow::on_Srednia_clicked()

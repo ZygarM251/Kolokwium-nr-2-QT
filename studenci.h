@@ -1,7 +1,6 @@
 #ifndef STUDENCI_H
 #define STUDENCI_H
 #include <QString>
-#include <QVector>
 class Studenci
 {
 private:
@@ -11,6 +10,7 @@ private:
     int ocena_Matematyka;
 
 public:
+    Studenci();
     Studenci(QString IMIE,QString NAZWISKO,int OcenaInformatyka,int OcenaMatematyka);
 
     QString getImie()const {return imie;}
